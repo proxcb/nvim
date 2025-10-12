@@ -27,7 +27,10 @@ vim.pack.add({
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/Saghen/blink.cmp" },
+  { src = "https://github.com/ellisonleao/gruvbox.nvim" },
 })
+
+vim.cmd[[colorscheme gruvbox]]
 
 -- load immediately
 -- require("nvim-autopairs").setup({})
