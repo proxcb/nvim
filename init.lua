@@ -27,10 +27,33 @@ vim.pack.add({
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/Saghen/blink.cmp" },
+
+  -- Dependency on zenbones
+  { src = "https://github.com/rktjmp/lush.nvim" },
+  
+  -- Theme
   { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+  { src = "https://github.com/paulo-granthon/hyper.nvim" },
+  { src = "https://github.com/zenbones-theme/zenbones.nvim" }
 })
 
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[set termguicolors]]
+vim.cmd[[set background=dark]]
+vim.cmd[[colorscheme zenbones]]
+
+-- Indentation
+vim.cmd([[
+  syntax on
+  filetype plugin indent on
+]])
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.o.breakindent = true
+vim.o.smarttab = true
 
 -- load immediately
 -- require("nvim-autopairs").setup({})
@@ -59,5 +82,8 @@ require("blink.cmp").setup({
     fuzzy = {
         implementation = "lua", 
     },
+    keymap = {
+        ["<C-Space>"] = { "accept" },  -- Ctrl+Space accepts current suggestion
+    }
 })
 
